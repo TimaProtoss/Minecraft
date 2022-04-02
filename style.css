@@ -1,6 +1,17 @@
+:root {
+    --bg-color:#272e2e;
+    --font-color:#ced7cb;
+    --nav-bg-color:#3e5d5d;
+    --middle-color:#698989;
+    --light-color:#ced7cb;
+}
+
 article, aside, details, figcaption, figure, footer,header,
 hgroup, menu, nav, section { 
     display: block; 
+}
+* {
+    box-sizing: border-box;
 }
 html {
     height: 100%;
@@ -8,15 +19,39 @@ html {
 body {
     margin: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: #272e2e;
-    color:#ced7cb;
+    background-color: var(--bg-color);
+    color: var(--font-color);
     height: 100%;
     font-size: 1em;
 }
-main, header > div, footer > div {
+main, header > div, nav > ul, footer > div {
     max-width:1440px;
     margin:0 auto;
     padding: 0 20px;
+}
+nav {
+    margin: 0;
+    padding: 10px 0;
+    background-color: var(--nav-bg-color);
+    height:40px;
+    position: fixed;
+    left:0;
+    right:0;
+    border-bottom: 1px solid var(--light-color);
+}
+nav ul {
+    list-style-type: none;
+}
+nav li {
+    float: left;
+    padding-right: 20px;
+}
+nav a {
+    color:var(--light-color);
+    text-decoration: none;
+}
+nav a:hover {
+    text-decoration: underline;
 }
 img {
     max-width: 100%;
@@ -27,7 +62,8 @@ header {
     height:900px;
     max-height: 80%;
     min-height: 500px;
-    text-shadow: 1px 1px 2px #272e2e, 0 0 1em #272e2e;
+    text-shadow: 2px 2px 2px #272e2e, 0 0 8px #272e2e;
+    padding-top: 50px;
 }
 header div div {
     float: right;
@@ -39,6 +75,8 @@ header h1 {
 }
 header p {
     font-size: 2em;
+    line-height: 1.5em;
+    font-weight: 600;
 }
 
 h1, h2 {
@@ -51,13 +89,39 @@ h1 {
 }
 h2 {
     font-size: 2em;
+    margin-top: 70px;
+}
+#members, #unions, #projects {
+    margin-top: -50px;
+    padding-top: 50px;
+}
+h3 {
+    font-size: 1.75em;
+    color: var(--middle-color);
 }
 footer {
-    border-top: 1px solid #ced7cb;
+    border-top: 1px solid var(--light-color);
     margin-top: 50px;
     padding: 20px 0;
     font-size: .6em;
 }
+.union, .project {
+    display: flex;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+    border-bottom: 2px solid var(--nav-bg-color);
+}
+.union__image, .project__image {
+    min-width: 380px;
+}
+.union__image img, .project__image img {
+    max-width: 350px;
+}
+.union__text h3, .project__text h3 {
+    margin-top: 0;
+}
+
+
 @media (max-width: 768px) {
     header {
         height:250px;
