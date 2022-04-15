@@ -105,11 +105,15 @@ footer {
     padding: 20px 0;
     font-size: .6em;
 }
-.union, .project {
+.union, .projects {
+    border-bottom: 2px solid var(--nav-bg-color);
+}
+
+.union, .project, .project_2 {
     display: flex;
     padding-bottom: 30px;
     margin-bottom: 50px;
-    border-bottom: 2px solid var(--nav-bg-color);
+
 }
 .union__image, .project__image {
     min-width: 380px;
@@ -132,5 +136,8 @@ footer {
     }
     header p {
         font-size: 1.6em;
+    }
+    .union__image, .project__image {
+        min-width: 280px;
     }
 }
